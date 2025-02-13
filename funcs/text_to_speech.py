@@ -1,5 +1,5 @@
 import streamlit as st
-
+import pyttsx3
 def app():
     st.title('Text to Speech')
     
@@ -9,5 +9,6 @@ def app():
     text_input = st.text_area("Enter text:")
     
     if st.button('Convert to Speech'):
-        st.write("Text to Speech functionality is not yet implemented.")
-        # Perform text to speech conversion
+        engine = pyttsx3.init()
+        engine.say(text_input)
+        engine.runAndWait()
