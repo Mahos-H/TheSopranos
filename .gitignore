@@ -3,3 +3,7 @@ include
 lib
 lib64
 pyvenv.cfg
+Scripts
+etc
+share
+*/__pycache__
