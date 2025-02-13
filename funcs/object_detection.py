@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_webrtc import webrtc_streamer
 
 def app():
     st.title('Object Detection')
@@ -9,5 +10,5 @@ def app():
     use_camera = st.checkbox('Use Camera')
     
     if use_camera:
-        st.write("Camera functionality is not yet implemented.")
         # Capture and process video frames for gesture detection
+        webrtc_streamer(key="sample", sendback_audio=False, rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]})
